@@ -30,16 +30,36 @@
           background: rgba(255,255,255,0.3);
 			    padding: 5px;
           bottom:50px;
-          left:40%;
+          left:45%;
 
 		    }
+        #continer{
+          :-webkit-full-screen #container {
+            width:100%;
+            height:100%;
+          }
 
 		    a { color: red; }
 
 		</style>
 	</head>
-	<body>
-
+	<body onload="goFullscreen">
+  <script>
+    function goFullscreen(){
+      var canvas = document.getElementById("container");
+      if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+          elem.msRequestFullscreen();
+      } else if (elem.mozRequestFullScreen) {
+          elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) {
+          elem.webkitRequestFullscreen();
+      }
+      else
+          window.fullScreen();
+    }
+  </script>
 		<div id="container"></div>
 		<div id="info" style="display:none">
 				<a href="http://threejs.org" target="_blank">three.js</a> - webgl dynamic particles + postprocessing
@@ -49,7 +69,7 @@
 
 			</div>
       <div id="passcode">
-        THIS IS THE CODE
+        9627
 			</div>
 
 		<script src="../build/three.min.js"></script>
